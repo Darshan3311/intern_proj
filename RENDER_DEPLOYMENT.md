@@ -36,7 +36,7 @@ Render will automatically detect the `render.yaml` file, but you can also config
 #### 4. **Environment Variables**
 Add these environment variables in Render dashboard:
 - `NODE_ENV`: `production`
-- `NODE_VERSION`: `18.17.0`
+- `NODE_VERSION`: `20.18.0` (LTS version)
 - Add any other variables from `.env.example` as needed
 
 #### 5. **Deploy**
