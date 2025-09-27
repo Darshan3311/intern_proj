@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: social-trends-dashboard
+    env: node
+    buildCommand: npm run render-build
+    startCommand: npm start
+    plan: free
+    # Auto-deploy from GitHub
+    autoDeploy: true
+    # Environment variables
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 20.18.0
+    # Health check
+    healthCheckPath: /
+    # Build settings
+    buildFilter:
+      paths:
+        - app/**
+        - components/**
+        - lib/**
+        - public/**
+        - styles/**
+        - package.json
+        - package-lock.json
+        - next.config.mjs
+        - tsconfig.json
+        - tailwind.config.js
+        - postcss.config.mjs
