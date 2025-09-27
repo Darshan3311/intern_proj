@@ -11,6 +11,10 @@ const nextConfig = {
   },
   // Render deployment configuration
   output: 'standalone',
+  // Ensure proper port binding for Render
+  env: {
+    PORT: process.env.PORT || '10000',
+  },
   // Allow external domains if needed
   experimental: {
     serverComponentsExternalPackages: [],
