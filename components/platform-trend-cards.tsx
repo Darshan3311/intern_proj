@@ -72,18 +72,18 @@ export function PlatformTrendCards() {
   }, [])
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-bold bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent">
+    <div className="space-y-4 sm:space-y-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-0">
+        <h2 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent">
           Platform Trends
         </h2>
         <div className="flex items-center space-x-2">
           <div className="w-2 h-2 rounded-full bg-neon-green animate-pulse" />
-          <span className="text-sm text-muted-foreground">Live Data</span>
+          <span className="text-xs sm:text-sm text-muted-foreground">Live Data</span>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         {Object.entries(platformData).map(([key, platform]) => {
           const Icon = platform.icon
           const isSelected = selectedPlatform === key
@@ -91,7 +91,7 @@ export function PlatformTrendCards() {
           return (
             <Card
               key={key}
-              className={`relative overflow-hidden transition-all duration-300 cursor-pointer group hover:scale-105 ${
+              className={`relative overflow-hidden transition-all duration-300 cursor-pointer group hover:scale-[1.02] sm:hover:scale-105 ${
                 isSelected
                   ? "border-neon-blue neon-glow-blue bg-card/80"
                   : "border-border/50 hover:border-neon-blue/50 bg-card/30"
@@ -101,33 +101,33 @@ export function PlatformTrendCards() {
               {/* Background Gradient */}
               <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-neon-blue/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-              <CardHeader className="relative pb-3">
+              <CardHeader className="relative pb-2 sm:pb-3 p-4 sm:p-6">
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-2">
-                    <Icon className={`h-5 w-5 ${platform.color}`} />
-                    <CardTitle className="text-lg">{platform.name}</CardTitle>
+                  <div className="flex items-center space-x-1 sm:space-x-2">
+                    <Icon className={`h-4 w-4 sm:h-5 sm:w-5 ${platform.color}`} />
+                    <CardTitle className="text-base sm:text-lg">{platform.name}</CardTitle>
                   </div>
-                  <TrendingUp className="h-4 w-4 text-neon-green" />
+                  <TrendingUp className="h-3 w-3 sm:h-4 sm:w-4 text-neon-green" />
                 </div>
               </CardHeader>
 
-              <CardContent className="relative space-y-3">
-                <div className="text-xs text-muted-foreground mb-3">Top 5 Trending</div>
+              <CardContent className="relative space-y-2 sm:space-y-3 p-4 sm:p-6 pt-0">
+                <div className="text-xs text-muted-foreground mb-2 sm:mb-3">Top 5 Trending</div>
 
                 {platform.trends.map((trend, index) => (
                   <div
                     key={index}
-                    className={`flex items-center justify-between p-2 rounded-lg bg-secondary/30 hover:bg-secondary/50 transition-all duration-200 ${
+                    className={`flex items-center justify-between p-1.5 sm:p-2 rounded-lg bg-secondary/30 hover:bg-secondary/50 transition-all duration-200 ${
                       animatingTrends[key] ? "animate-in slide-in-from-left" : "opacity-0"
                     }`}
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
-                    <div className="flex items-center space-x-2 flex-1 min-w-0">
-                      <Hash className="h-3 w-3 text-muted-foreground flex-shrink-0" />
-                      <span className="text-sm font-medium truncate">{trend.hashtag}</span>
+                    <div className="flex items-center space-x-1 sm:space-x-2 flex-1 min-w-0">
+                      <Hash className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-muted-foreground flex-shrink-0" />
+                      <span className="text-xs sm:text-sm font-medium truncate">{trend.hashtag}</span>
                     </div>
-                    <div className="flex items-center space-x-2 flex-shrink-0">
-                      <Badge variant="secondary" className="text-xs px-1.5 py-0.5">
+                    <div className="flex items-center space-x-1 sm:space-x-2 flex-shrink-0">
+                      <Badge variant="secondary" className="text-xs px-1 sm:px-1.5 py-0.5">
                         {trend.posts}
                       </Badge>
                       <Badge className="text-xs px-1.5 py-0.5 bg-neon-green/20 text-neon-green border-neon-green/30">

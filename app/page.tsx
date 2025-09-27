@@ -17,8 +17,8 @@ export default function ViralLensPage() {
         return (
           <>
             <ViralLensHero />
-            <main className="px-6 py-12 space-y-12">
-              <div className="max-w-7xl mx-auto space-y-12">
+            <main className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-8 sm:space-y-12">
+              <div className="max-w-7xl mx-auto space-y-8 sm:space-y-12">
                 <PlatformTrendCards />
                 <ViralLensVisualizations />
                 <ViralLensAIInsights />
@@ -28,7 +28,7 @@ export default function ViralLensPage() {
         )
       case "Platforms":
         return (
-          <main className="px-6 py-12">
+          <main className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
             <div className="max-w-7xl mx-auto">
               <PlatformTrendCards />
             </div>
@@ -36,7 +36,7 @@ export default function ViralLensPage() {
         )
       case "Insights":
         return (
-          <main className="px-6 py-12">
+          <main className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
             <div className="max-w-7xl mx-auto">
               <ViralLensAIInsights />
             </div>
@@ -44,7 +44,7 @@ export default function ViralLensPage() {
         )
       case "Predictions":
         return (
-          <main className="px-6 py-12">
+          <main className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
             <div className="max-w-7xl mx-auto">
               <ViralLensVisualizations />
             </div>
@@ -52,7 +52,7 @@ export default function ViralLensPage() {
         )
       case "Settings":
         return (
-          <main className="px-6 py-12">
+          <main className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
             <div className="max-w-7xl mx-auto">
               <ViralLensSettings />
             </div>
@@ -62,8 +62,8 @@ export default function ViralLensPage() {
         return (
           <>
             <ViralLensHero />
-            <main className="px-6 py-12 space-y-12">
-              <div className="max-w-7xl mx-auto space-y-12">
+            <main className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-8 sm:space-y-12">
+              <div className="max-w-7xl mx-auto space-y-8 sm:space-y-12">
                 <PlatformTrendCards />
                 <ViralLensVisualizations />
                 <ViralLensAIInsights />
